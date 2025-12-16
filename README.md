@@ -15,3 +15,19 @@
 - ✅ **Консольный интерфейс** – интуитивно понятное управление через CLI
 
 ## 🏗️ Архитектура
+
+**Ключевые интерфейсы:**
+```go
+type AccountService interface {
+    CreateAccount(owner string, initialBalance float64) (*Account, error)
+    Deposit(accountID string, amount float64) error
+    Withdraw(accountID string, amount float64) error
+    Transfer(fromID, toID string, amount float64) error
+    GetStatement(accountID string) (*Statement, error)
+}
+
+type Storage interface {
+    SaveAccount(account *Account) error
+    FindAccount(id string) (*Account, error)
+    SaveTransaction(transaction *Transaction) error
+}
