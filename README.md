@@ -39,3 +39,23 @@ type Storage interface {
 5. Просмотреть выписку
 6. История транзакций
 7. Выход
+.
+├── cmd/
+│   └── main.go                    # Точка входа
+├── internal/
+│   ├── domain/
+│   │   ├── account.go            # Сущность счета
+│   │   ├── transaction.go        # Сущность транзакции
+│   │   └── errors.go             # Доменные ошибки
+│   ├── service/
+│   │   └── account_service.go    # Бизнес-логика
+│   └── storage/
+│       ├── interface.go          # Интерфейс хранилища
+│       └── memory_storage.go     # In-memory реализация
+├── pkg/
+│   └── utils/
+│       └── formatter.go          # Утилиты форматирования
+├── go.mod
+├── go.sum
+├── LICENSE
+└── README.md
