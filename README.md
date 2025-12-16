@@ -31,3 +31,11 @@ type Storage interface {
     FindAccount(id string) (*Account, error)
     SaveTransaction(transaction *Transaction) error
 }
+=== Банковское приложение ===
+1. Создать новый счет
+2. Пополнить счет
+3. Снять средства
+4. Перевести деньги
+5. Просмотреть выписку
+6. История транзакций
+7. Выход
